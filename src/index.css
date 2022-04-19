@@ -1,0 +1,177 @@
+html{
+  max-width: 100vw;
+}
+
+:root{
+  --colorPrimary:#ff5526 ;
+  --colorPrimaryDark:#1a0600;
+  --colorPrimaryLight:#ffebe6;
+  --colorSecondary: #ffc226;
+  --colorTertiary: #263fff;
+  --projectCardShadow:2px 2px 16px -2px var(--colorPrimaryDark);
+  --headerColor: var(--colorPrimaryDark);
+  --headerGradient:linear-gradient(to top,white,var(--colorPrimary));
+  --backgroundColor: #ffffff;
+}
+[data-theme="dark"]{
+  --colorPrimary:#ff734d ;
+  --colorPrimaryDark:#ffffff;
+  --colorPrimaryLight:#050100; /*#661600*/
+  --colorSecondary: #ffc226;
+  --colorTertiary: #b3b9ff;
+  --projectCardShadow:4px 4px 16px -2px #330b00;
+  --headerGradient:linear-gradient(to top,var(--colorPrimaryLight),var(--colorPrimary));
+  --backgroundColor: #050100;
+}
+body{
+  max-width: 100%;
+  background-color: var(--backgroundColor);
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  max-width: 100%;
+  color: var(--colorPrimaryDark);
+}
+header svg{
+  cursor: pointer;
+}
+header svg path{
+  color:var(--colorPrimaryDark);
+}
+svg path{
+  color:var(--colorPrimary);
+  font-size: 18px;
+  line-height: 30px;
+  /* path element inside svg will not react to pointer events e.g click and hover, making svg
+  event handler run when the svg is clicked */
+  pointer-events: none;
+}
+
+/*
+colors
+#263fff
+#ffc226
+#ff5526
+ */
+
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+p,li{
+  font-size: 18px;
+  line-height: 30px;
+}
+a{
+  color: var(--colorTertiary);
+}
+h3{
+  font-size: 22px;
+  line-height: 36px;
+  font-weight: 600;
+  
+}
+h2{
+  font-size: 26px;
+  line-height: 42px;
+  color: var(--colorPrimary);
+}
+h1{
+  font-size: 34px;
+  line-height: 56px;
+  color: var(--colorPrimaryDark);
+}
+header,footer{
+  padding: 8px 16px;
+}
+header{
+  padding-bottom: 16px;
+  z-index: 1;
+}
+section,nav{
+  margin: 0 16px;
+  padding: 8px 0
+}
+ul{
+  list-style-type: none;
+  list-style-position: inside;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+nav{
+  margin-top: 8px;
+}
+
+nav ul{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-between;
+}
+nav ul li{
+  background-color: var(--colorPrimaryLight);
+  border-radius: 32px;
+  padding: 4px 16px;
+}
+
+
+li ul{
+  margin-left: 24px;
+}
+
+a{
+  text-decoration: none;
+}
+
+@media only screen and (min-width:768px){
+  nav ul{
+    justify-content: center;
+  }
+  nav ul li{
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+  section,nav{
+    margin: 0 32px;
+    padding: 16px 0
+  }
+  header,footer{
+    padding: 8px 32px;
+  }
+  header{
+    padding-bottom: 16px;
+  }
+  main{
+    display: grid;
+    grid-template-areas: 'about skills' 'projects projects';
+  }
+  #about{
+    grid-area:about;
+  }
+  #skills{
+    grid-area:skills;
+  }
+  #projects{
+    grid-area:projects;
+  }
+  .projects_list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 16px;
+  }
+
+}
+
+

@@ -1,0 +1,37 @@
+.project-card{
+    padding: 8px;
+    margin-top: 16px;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--colorPrimaryLight); /*#050100*/
+    background-blend-mode: overlay;
+    box-shadow: var(--projectCardShadow);
+    position: relative;
+    padding-bottom: 64px;
+}
+
+.project-card p:last-child{
+    margin-top: 16px;
+}
+button{
+    padding: 8px 16px;
+    font-size: 22px;
+    line-height: 36px;
+    border-radius: 8px;
+    border:none;
+    outline: none;
+    background-image: linear-gradient(var(--colorPrimary),var(--colorPrimary),var(--colorPrimary),var(--colorPrimaryDark));
+    color: white;
+    position:absolute;
+    bottom:8px;
+    cursor: pointer;
+}
+button:hover{
+    background-image: linear-gradient(var(--colorPrimary),var(--colorPrimaryDark));
+}
+
+/* .project-card h3{
+    color: var(--colorTertiary);
+} */

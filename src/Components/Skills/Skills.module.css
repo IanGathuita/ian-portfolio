@@ -1,0 +1,19 @@
+#skills_list{
+    display: flex;
+    justify-content: flex-start;
+}
+#skills_list ul{
+    margin-right: 40px;
+}
+li{
+    display: flex;
+    align-items: center;
+}
+li span::before{
+    white-space: pre;
+    content: " ";
+    
+}
+.first_column li{
+    display: block;
+}
