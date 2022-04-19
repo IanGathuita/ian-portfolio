@@ -7,6 +7,7 @@ const Header = () => {
     const [currentTheme,setCurrentTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : null);
     useEffect(() => {
         if (currentTheme) {
+            //document.documentElement returns the root html element object
             document.documentElement.setAttribute('data-theme', currentTheme);
         }
     },[currentTheme]);
