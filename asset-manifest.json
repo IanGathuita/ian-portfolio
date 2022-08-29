@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/ian-portfolio/static/css/main.3449f756.css",
+    "main.js": "/ian-portfolio/static/js/main.308bd913.js",
+    "static/media/sendit.png": "/ian-portfolio/static/media/sendit.b46e3f9a60afe7e2e463.png",
+    "static/media/Ian_img.jpg": "/ian-portfolio/static/media/Ian_img.f3175dabc06617e9f6c9.jpg",
+    "static/media/todo.png": "/ian-portfolio/static/media/todo.b7ced007626af745147c.png",
+    "static/media/movies.png": "/ian-portfolio/static/media/movies.396a3450cca2d663b958.png",
+    "static/media/code.svg": "/ian-portfolio/static/media/code.ea93687db1eaf34e04507351e6aaa3ca.svg",
+    "index.html": "/ian-portfolio/index.html",
+    "main.3449f756.css.map": "/ian-portfolio/static/css/main.3449f756.css.map",
+    "main.308bd913.js.map": "/ian-portfolio/static/js/main.308bd913.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3449f756.css",
+    "static/js/main.308bd913.js"
+  ]
+}
