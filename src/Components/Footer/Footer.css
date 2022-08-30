@@ -1,31 +1,26 @@
 footer{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap:wrap;    
-}
-footer div{
-    flex-basis:0;   
-}
-footer div:first-child{
-    flex-grow: 1;
-}
-footer div:last-child{
-    flex-grow: 2;
-}
-
-.socials ul li, .links ul li{
-    display: flex;
-    align-items: center;
+    display:grid;
+    grid-template-columns: auto;
 }
 li a::before{
     white-space: pre ;
     content: " ";
 }
-@media only screen and (min-width:768px){
-    footer div{
-        flex-basis:50%;   
+.links{
+    margin-bottom: 8px;
+}
+.links a, .socials a{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+@media only screen and (min-width:390px){
+    footer{
+        grid-template-columns: auto auto;
     }
-    
+    .links{
+        margin-bottom: 0;
+    }
 }
 
 

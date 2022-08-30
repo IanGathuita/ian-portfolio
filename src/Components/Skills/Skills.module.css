@@ -1,6 +1,8 @@
 #skills_list{
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 8px;
 }
 #skills_list ul{
     margin-right: 40px;
@@ -16,4 +18,13 @@ li span::before{
 }
 .first_column li{
     display: block;
+}
+
+@media only screen and (min-width:360px){
+    #skills_list{
+        flex-direction: row;
+        margin-top: 0;
+        
+    }
+
 }
