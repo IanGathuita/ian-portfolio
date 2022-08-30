@@ -10,6 +10,7 @@
     box-shadow: var(--projectCardShadow);
     position: relative;
     padding-bottom: 64px;
+    border: 2px solid var(--colorGhost);
 }
 
 .project-card p:last-child{
@@ -31,7 +32,3 @@ button{
 button:hover{
     background-image: linear-gradient(var(--colorPrimary),var(--colorPrimaryDark));
 }
-
-/* .project-card h3{
-    color: var(--colorTertiary);
-} */

@@ -12,6 +12,8 @@ html{
   --headerColor: var(--colorPrimaryDark);
   --headerGradient:linear-gradient(to top,white,var(--colorPrimary));
   --backgroundColor: #ffffff;
+  --colorGhost: none;
+  --colorGhost2: none;
 }
 [data-theme="dark"]{
   --colorPrimary:#ff734d ;
@@ -22,6 +24,8 @@ html{
   --projectCardShadow:4px 4px 16px -2px #330b00;
   --headerGradient:linear-gradient(to top,var(--colorPrimaryLight),var(--colorPrimary));
   --backgroundColor: #050100;
+  --colorGhost: var(--colorPrimary);
+  --colorGhost2: var(--colorTertiary);
 }
 body{
   max-width: 100%;
@@ -125,7 +129,11 @@ nav ul li{
   border-radius: 32px;
   padding: 4px 16px;
   margin-bottom: 8px;
+  border: 1px solid var(--colorTertiary);
+  margin-right: 8px;
+  border: 2px solid var(--colorGhost2);
 }
+
 
 
 li ul{
