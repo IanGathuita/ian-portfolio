@@ -15,9 +15,9 @@ const Footer = () => {
             <div className="socials">
                 <h3>Socials</h3>
                 <ul>
-                    <li><ImTwitter></ImTwitter><a href="http://twitter.com">Twitter</a></li>
-                    <li><ImFacebook></ImFacebook><a href="http://facebook.com">Facebook</a></li>
-                    <li><RiInstagramFill></RiInstagramFill><a href="http://instagram.com">Instagram</a></li>
+                    <li><ImTwitter></ImTwitter><a href="http://twitter.com/IanGathuita">Twitter</a></li>
+                    <li><ImFacebook></ImFacebook><a href="http://facebook.com/ian.gathuita">Facebook</a></li>
+                    <li><RiInstagramFill></RiInstagramFill><a href="http://instagram.com/__iangathuita__">Instagram</a></li>
                 </ul>
             </div>
         </footer>

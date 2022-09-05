@@ -24,35 +24,27 @@ const Projects = () => {
         }
     ];
     const [modalHidden, setModalHidden] = useState(true);
-    const [scrollPosition, setScrollPosition] = useState(window.scrollY);    
-    console.log(scrollPosition);
 
     useEffect(() => {
         const appElement = document.querySelector('.App');
         if(modalHidden){                 
            appElement.classList.remove('overlay');
-           window.scrollTo(window.scrollX,scrollPosition);
         }
         else{
-            appElement.classList.add('overlay');          
-            
+            appElement.classList.add('overlay');       
         }
     },[modalHidden]);
 
     let hideModal = (flag) => {
         setModalHidden(flag);
     }
-    let setScrollPos = (pos) => {
-        setScrollPosition(pos);
-    }
-
     return (
         <section id="projects">
             <h2>Projects</h2>
             <p>During the course of my burgeoning career, I have been lucky to bring the following
                 projects into existence.
             </p>
-            <ModalContext.Provider value={{modalHidden, hideModal, scrollPosition,setScrollPos}}>
+            <ModalContext.Provider value={{modalHidden, hideModal}}>
                 <div className="projects_list">
                     {
                         projectsInfo.map(project => {

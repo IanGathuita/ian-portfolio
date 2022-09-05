@@ -1,10 +1,10 @@
 import './Project.css';
 import { ModalContext } from '../Projects/Projects';
-import { useContext, useState } from 'react';
+import { useContext} from 'react';
 
 const Project = (props) => {
     const bgImageUrl = `url(${props.background})`;
-    const { hideModal, scrollPosition,setScrollPos } = useContext(ModalContext);
+    const { hideModal} = useContext(ModalContext);
     const handleClick = () => {
         try {
             let projectUrl = new URL(props.url);
@@ -12,7 +12,6 @@ const Project = (props) => {
             return;
         }
         catch {
-            setScrollPos(window.scrollY);
             hideModal(false);
         }
     }
