@@ -1,0 +1,16 @@
+.unavailable{
+    border: 2px solid var(--colorPrimary);
+    border-radius: 8px;
+    margin: 0;
+    background-color: var(--colorPrimaryLight);
+}
+.unavailable div{
+    padding: 8px;
+    text-align: center;
+} 
+.modalButton{
+    position: static;
+    margin-top: 8px;
+}
+#modalIcon{
+}

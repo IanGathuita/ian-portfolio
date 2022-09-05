@@ -20,7 +20,7 @@ const Skills = () => {
                 </div>
                 <div className="second-column">
                 <li><FaCheckCircle></FaCheckCircle><span>Java</span></li>
-                <li><FaCheckCircle></FaCheckCircle><span>SQL and SQL server</span></li>
+                <li><FaCheckCircle></FaCheckCircle><span>MySQL and T-SQL</span></li>
                 <li><FaCheckCircle></FaCheckCircle><span>Wordpress</span></li>
                 <li><FaCheckCircle></FaCheckCircle><span>MongoDB</span></li>
                 </div>

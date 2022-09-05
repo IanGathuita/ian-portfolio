@@ -1,6 +1,7 @@
 import About from "../About/About";
-import Projects from "../Projects/Projects";
+import {Projects} from "../Projects/Projects";
 import Skills from "../Skills/Skills";
+
 
 const Main = () => {
     return ( 

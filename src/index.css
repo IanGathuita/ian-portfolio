@@ -144,6 +144,25 @@ a{
   text-decoration: none;
 }
 
+#modal{
+  position: fixed;
+  top:30%;
+  width: calc(100vw - 32px);;
+  margin: 16px;
+  border-radius: 8px;
+}
+
+.overlay{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100vw;
+  height: 100vw;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+
 @media only screen and (min-width:768px){
   nav ul{
     justify-content: center;
@@ -179,6 +198,11 @@ a{
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 16px;
+  }
+  #modal{
+    margin: 32px 25vw;
+    width: 50vw;
+    text-align: center;
   }
 
 }
