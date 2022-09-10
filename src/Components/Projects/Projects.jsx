@@ -10,16 +10,16 @@ const ModalContext = createContext();
 const Projects = () => {
     const projectsInfo = [
         {
-            name: 'Movies website', description: `Website for the  biggest courier service provider in Kenya. Using this website, you can track your
+            name: 'sendIT website', description: `Website for a courier service provider. Using this website, you can track your
         parcels that are still in the delivery process. You can also view your past transactions`,
-            background: movies, url:''
+            background: sendit, url:''
         },
         {
-            name: 'sendIT website', description: `A simple project to practise on global state management using Redux. A user can add a movie,edit 
-        it or delete it.`, background: sendit,url:''
+            name: 'Movies website', description: `A simple project to practise on global state management using Redux. A user can add a movie,edit 
+        it or delete it.`, background: movies,url:''
         },
         {
-            name: 'To-do list website', description: `A to-do web app that a user can leverage in saving to-dos, editing and deleting them`,
+            name: 'To-do list website', description: `A to-do web app that a user can leverage  to save to-dos, edit and delete them`,
             background:  todo, url:''
         }
     ];
