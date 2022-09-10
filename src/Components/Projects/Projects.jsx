@@ -29,9 +29,11 @@ const Projects = () => {
         const appElement = document.querySelector('.App');
         if(modalHidden){                 
            appElement.classList.remove('overlay');
+           appElement.style.filter = 'none';
         }
         else{
-            appElement.classList.add('overlay');       
+            appElement.classList.add('overlay');
+            appElement.style.filter = 'blur(8px)';
         }
     },[modalHidden]);
 
