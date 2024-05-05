@@ -37,6 +37,7 @@ body{
   box-sizing: border-box;
   max-width: 100%;
   color: var(--colorPrimaryDark);
+  font-weight: 600;
 }
 header svg{
   cursor: pointer;

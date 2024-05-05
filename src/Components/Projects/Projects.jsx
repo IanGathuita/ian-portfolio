@@ -1,6 +1,7 @@
 import Project from "../Project/Project";
 import movies from '../../Assets/Images/movies.png';
 import sendit from '../../Assets/Images/sendit.png';
+import ke_sal_calc_badge from '../../Assets/Images/ke-sal-calc-badge.svg';
 import todo from '../../Assets/Images/todo.png';
 import './Projects.css';
 import { Modal } from '../Modal/Modal';
@@ -10,13 +11,13 @@ const ModalContext = createContext();
 const Projects = () => {
     const projectsInfo = [
         {
+            name: 'KE salary calculator', description: `A basic & to-the-point statutories and net salary calculator using Kenyan rates`,
+            background: ke_sal_calc_badge, url:'https://iangathuita.github.io/ke-salary-calculator/'
+        },
+        {
             name: 'sendIT website', description: `Website for a courier service provider. Using this website, you can track your
         parcels that are still in the delivery process. You can also view your past transactions`,
             background: sendit, url:''
-        },
-        {
-            name: 'Movies website', description: `A simple project to practise on global state management using Redux. A user can add a movie,edit 
-        it or delete it.`, background: movies,url:''
         },
         {
             name: 'To-do list website', description: `A to-do web app that a user can leverage  to save to-dos, edit and delete them`,
