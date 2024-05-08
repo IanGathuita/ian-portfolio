@@ -7,12 +7,12 @@ const About = () => {
         <section className="about" id="about" >
         <div>
         <h2>Who am I?</h2>
-        <p>I am a junior software developer who loves making websites and apps. During my development
-            process, I work closely with my clients in order to deliver what they want. I ensure that the
-            final product is optimized and usable in order to give users the best experience.
+        <p>I am a junior software developer who thrives on untangling complex problems with elegant code. 
+            Websites and apps are my tools to <em>bridge the gap between user needs and innovative solutions</em>.
+            I find immense satisfaction in crafting user-centric experiences that have a positive impact.
         </p>
         </div>
-        <img  src={IanImg} alt="Ian's passport"></img>
+        <img  src={IanImg} alt="Ian's passport" className='passport'></img>
         </section>
      );
 }

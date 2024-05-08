@@ -3,6 +3,7 @@
     border-radius: 8px;
     margin: 0;
     background-color: var(--colorPrimaryLight);
+    overflow :hidden;
 }
 .unavailable div{
     padding: 8px;
