@@ -44,7 +44,7 @@ const Projects = () => {
     return (
         <section id="projects">
             <h2>Projects</h2>
-            <p>In my career, I've developed several impactful independent projects, including:
+            <p>I've developed several impactful independent projects, including:
             </p>
             <ModalContext.Provider value={{modalHidden, hideModal}}>
                 <div className="projects_list">
