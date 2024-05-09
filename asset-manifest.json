@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ian-portfolio/static/css/main.5c724b93.css",
-    "main.js": "/ian-portfolio/static/js/main.eb8dddad.js",
+    "main.css": "/ian-portfolio/static/css/main.b0652f7e.css",
+    "main.js": "/ian-portfolio/static/js/main.5a3d83c1.js",
     "static/media/sendit.png": "/ian-portfolio/static/media/sendit.b46e3f9a60afe7e2e463.png",
     "static/media/Ian_img.jpg": "/ian-portfolio/static/media/Ian_img.f3175dabc06617e9f6c9.jpg",
     "static/media/todo.png": "/ian-portfolio/static/media/todo.b7ced007626af745147c.png",
@@ -11,7 +11,7 @@
     "static/media/ke-sal-calc-badge.svg": "/ian-portfolio/static/media/ke-sal-calc-badge.0cd0507dcf8077f9a2e591a8f53f007d.svg"
   },
   "entrypoints": [
-    "static/css/main.5c724b93.css",
-    "static/js/main.eb8dddad.js"
+    "static/css/main.b0652f7e.css",
+    "static/js/main.5a3d83c1.js"
   ]
 }
