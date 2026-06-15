@@ -31,10 +31,12 @@ const Projects = () => {
         if(modalHidden){                 
            appElement.classList.remove('overlay');
            appElement.style.filter = 'none';
+           document.documentElement.style.overflow = 'auto';
         }
         else{
             appElement.classList.add('overlay');
             appElement.style.filter = 'blur(8px)';
+            document.documentElement.style.overflow = 'hidden';
         }
     },[modalHidden]);
 
