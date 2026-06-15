@@ -167,6 +167,11 @@ a{
   pointer-events: none;
 }
 
+.projects_list{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
 
 @media only screen and (min-width:768px){
   nav ul{
@@ -201,7 +206,8 @@ a{
   }
   .projects_list{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: none;
     grid-column-gap: 16px;
   }
   #modal{
