@@ -11,7 +11,7 @@ html{
   --colorTertiary: #263fff;
   --projectCardShadow:2px 2px 16px -2px var(--colorPrimaryDark);
   --headerColor: var(--colorPrimaryDark);
-  --headerGradient:linear-gradient(to top,white,var(--colorPrimary));
+  --headerGradient:linear-gradient(to top,var(--colorPrimaryLight),var(--colorPrimary));
   --backgroundColor: #ffffff;
   --colorGhost: none;
   --colorGhost2: none;
@@ -121,6 +121,7 @@ header{
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  
 }
 nav{
   margin-top: 8px;
@@ -130,7 +131,7 @@ nav ul{
   display:flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-content: space-between;
 }
 nav ul li{
@@ -194,6 +195,7 @@ a{
   main{
     display: grid;
     grid-template-areas: 'about skills' 'projects projects';
+    grid-template-columns: 1fr 1fr;
   }
   #about{
     grid-area:about;
