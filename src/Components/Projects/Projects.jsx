@@ -1,5 +1,4 @@
 import Project from "../Project/Project";
-import movies from '../../Assets/Images/movies.png';
 import sendit from '../../Assets/Images/sendit.png';
 import ke_sal_calc_badge from '../../Assets/Images/ke-sal-calc-badge.svg';
 import todo from '../../Assets/Images/todo.png';

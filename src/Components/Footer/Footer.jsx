@@ -17,7 +17,7 @@ const Footer = () => {
                 <ul>
                     <li><RiTwitterXFill></RiTwitterXFill> <a href="http://twitter.com/IanGathuita">X</a></li>
                     <li><ImFacebook></ImFacebook><a href="http://facebook.com/ian.gathuita">Facebook</a></li>
-                    <li><RiInstagramFill></RiInstagramFill><a href="http://instagram.com/__iangathuita__">Instagram</a></li>
+                    <li><RiInstagramFill></RiInstagramFill><a href="https://www.instagram.com/ian_gitaka/">Instagram</a></li>
                 </ul>
             </div>
         </footer>
