@@ -1,0 +1,123 @@
+# This file lives in .github/workflows/ in your repo. GitHub reads every
+# YAML file in that folder and runs it as an automated "workflow".
+#
+# What this workflow does, in plain words:
+#   1. Builds your React app into static files (HTML, CSS, JS).
+#   2. Publishes those files to GitHub Pages so they're live on the internet.
+
+# The name shown in the "Actions" tab of your repo. It's just a label.
+name: Deploy
+
+# TRIGGER: when should this workflow run?
+on:
+  push:                # run whenever someone pushes commits...
+    branches:
+      - master         # ...to the master branch (and only that branch)
+
+# PERMISSIONS (default for every job in this file)
+# Every job gets a temporary password called GITHUB_TOKEN. It lets the job
+# talk to GitHub (read code, create deployments, etc.). This block decides
+# what that token is allowed to do. Anything not listed is switched off.
+permissions:
+  contents: read       # read your repo's files (needed to check out the code)
+  pages: write         # create a GitHub Pages deployment
+  id-token: write      # let the job prove its identity to GitHub (see "deploy" job)
+
+# A workflow is made of jobs. Each job runs on its own brand-new virtual
+# machine, so jobs do NOT share files with each other unless you pass
+# them explicitly (we do that below with an "artifact").
+jobs:
+
+  # ------------------------------------------------------------------
+  # JOB 1: build. Turns your source code into the files to publish.
+  # This job inherits the top-level permissions above.
+  # ------------------------------------------------------------------
+  build:
+    runs-on: ubuntu-latest      # the type of virtual machine to use
+
+    # Steps run one after another, top to bottom, on that machine.
+    steps:
+
+      # The machine starts empty. This copies your repo's code onto it.
+      # (This is the step that needs "contents: read".)
+      - name: Check out repository
+        uses: actions/checkout@v6   # "uses" = run a ready-made action
+
+      # Installs Node.js so npm commands work.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:                       # "with" = settings passed to the action
+          node-version: 20
+          cache: npm                # reuse downloaded packages between runs (faster)
+
+      # Installs the exact package versions listed in package-lock.json.
+      # Stricter and more repeatable than "npm install".
+      - name: Install dependencies
+        run: npm ci                 # "run" = type this command in a terminal
+
+      # Compiles your React app. The output goes into the ./build folder.
+      - name: Build React app
+        run: npm run build
+
+      # Asks GitHub about your Pages settings (site URL, base path) and checks
+      # that Pages is switched on for this repo. It makes those values
+      # available to later steps, but nothing in this file uses them, and it
+      # runs after the build is already done. So for this React app it is
+      # effectively just a safety check, and you could delete it.
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # Packs the ./build folder into a single compressed file (a "tarball")
+      # and stores it with this workflow run as an ARTIFACT.
+      # - "path" is the only thing we choose: which folder to pack.
+      # - The artifact's name is NOT written here. It defaults to
+      #   "github-pages" inside the action itself.
+      # - Nothing is published yet. The live site hasn't changed.
+      # This is how files get from the build machine to the deploy machine.
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./build             # use ./dist instead if you use Vite
+
+  # ------------------------------------------------------------------
+  # JOB 2: deploy. Takes the packed files and publishes them.
+  # ------------------------------------------------------------------
+  deploy:
+    needs: build                    # wait for "build" to succeed first.
+                                    # This only controls ORDER. It does not
+                                    # copy files between jobs.
+
+    runs-on: ubuntu-latest          # a second, separate fresh machine
+
+    # A job-level "permissions" block REPLACES the top-level one for this job
+    # (it does not add to it). So this job gets only these two permissions
+    # and loses "contents: read", which is fine because it never checks out
+    # code. That's why permissions appear twice: top-level is the default,
+    # and this job narrows it down to what it needs.
+    permissions:
+      pages: write      # allowed to create the Pages deployment
+      id-token: write   # allowed to request an OIDC token: a signed proof of
+                        # "this request really comes from this repo's workflow".
+                        # The deploy action sends it to GitHub Pages.
+
+    # ENVIRONMENT: connects this job to a GitHub "Environment" named
+    # github-pages. Pages deployments must be linked to one. It gives you
+    # the "Deployments" history in your repo sidebar, and it's where rules
+    # such as "only master may deploy" or "needs a reviewer's approval" live.
+    # (This is a different thing from the artifact, which just happens to
+    # share the same name.)
+    environment:
+      name: github-pages
+      # Puts a clickable link to the live site on the deployment. The value
+      # comes from the step below, found through its id ("deployment").
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # Finds the artifact called "github-pages" from this same workflow run
+      # (its default name matches the upload step's default), downloads it,
+      # and tells GitHub Pages to publish it. The live site changes here.
+      # The "id" lets other parts of the file read this step's outputs,
+      # such as page_url above.
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
